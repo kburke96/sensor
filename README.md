@@ -45,7 +45,7 @@ The following methods are available to work with the API:
 ```bash
 locahost:8080/sensors/add
 ````
-![Add New Sensor](.img/add-sensor.png?raw=true "Sample Add Sensor Request")
+![Add New Sensor](https://github.com/kburke96/sensor/blob/main/img/add-sensor.png)
 
 ##### Result
 If the call is successful, the application sends back the new Sensor object that was added, in JSON format.
@@ -65,7 +65,7 @@ If the call is successful, the application sends back the new Sensor object that
 ```bash
 localhost:8080/sensors/1
 ```
-![Get Sensor by ID](.img/get-by-id.png?raw=true "Sample Get Sensor by ID Request")
+![Get Sensor by ID](https://github.com/kburke96/sensor/blob/main/img/get-by-id.png)
 ##### Result
 The application responds with the sensor data in JSON format
 ```json
@@ -88,7 +88,7 @@ The application responds with the sensor data in JSON format
 ```bash
 localhost:8080/sensors/all
 ```
-![Find all Sensors](.img/get-all.png?raw=true "Sample Find all Sensors Request")
+![Find all Sensors](https://github.com/kburke96/sensor/blob/main/img/get-all.png)
 ##### Result
 The application sends back a list of all sensors in the database, in JSON format.
 ```json
@@ -127,7 +127,7 @@ The RequestParam is the number of previous days to find the average for (default
 ```bash
 localhost:8080/sensors/1/gettemp?days=3
 ```
-![Get Average Temperature](.img/get-average-temp.png?raw=true "Sample Average Temperature Request")
+![Get Average Temperature](https://github.com/kburke96/sensor/blob/main/img/get-average-temp.png)
 ##### Result
 The application returns a ResponseEntity containing a single integer value, this is the average temperature.
 ```json
@@ -143,7 +143,7 @@ The RequestParam is the temperature to be added to the sensor.
 ```bash
 localhost:8080/sensors/1/addtemp?temp=14
 ```
-![Add Temperature to Sensor](.img/add-temp.png?raw=true "Sample Add Temp to Sensor Request")
+![Add Temperature to Sensor](https://github.com/kburke96/sensor/blob/main/img/add-temp.png)
 ##### Result
 The application returns the new Sensor object with the updated list of temperatures, in JSON format.
 ```json
