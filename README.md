@@ -8,8 +8,6 @@ Spring Boot REST API for Sensor data
 * HSQL In-memory database
 * Lombok
 
-[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=kburke96_sensor&metric=coverage)](https://sonarcloud.io/dashboard?id=kburke96_sensor)
-
 ## Pre-requisites
 This project has been tested using:
 * Linux Mint 20
@@ -61,7 +59,29 @@ If the call is successful, the application sends back the new Sensor object that
 }
 ```
 
-**2. Query all sensors in the database**
+**2. Query a sensor by ID**
+##### Example
+```bash
+localhost:8080/sensors/1
+```
+##### Result
+The application responds with the sensor data in JSON format
+```json
+{
+    "id": 1,
+    "countryName": "Ireland",
+    "cityName": "Limerick",
+    "temperatures": [
+        23,
+        34,
+        12,
+        10,
+        14
+    ]
+}
+```
+
+**3. Query all sensors in the database**
 ##### Example
 ```bash
 localhost:8080/sensors/all
@@ -95,7 +115,7 @@ The application sends back a list of all sensors in the database, in JSON format
 ]
 ```
 
-**3. Get average temperature for a given time range**
+**4. Get average temperature for a given time range**
 
 This method takes one PathVariable and one RequestParam.
 The PathVariable is the ID of the sensor to be queried.
@@ -110,7 +130,7 @@ The application returns a ResponseEntity containing a single integer value, this
 18
 ```
 
-**4. Add a temperature to a sensor**
+**5. Add a temperature to a sensor**
 
 This method takes one PathVariable and one RequestParam.
 The PathVariable is the ID of the sensor to be queried.
