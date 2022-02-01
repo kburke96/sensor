@@ -25,18 +25,28 @@ public class SensorController {
     
     private SensorService sensorService;
 
+    /**
+     * POST mapping to add a new sensor to the database
+     * @param sensor
+     */
     @PostMapping(value="/add")
     public ResponseEntity<Sensor> addNewSensor(@RequestBody Sensor sensor) {
         final Sensor newSensor = sensorService.addNewSensor(sensor);
         return ResponseEntity.ok(newSensor);
     }
 
+    /**
+     * GET mapping to retrieve a list of all sensors
+     */
     @GetMapping(value="/all")
     public ResponseEntity<List<Sensor>> findAllSensors() {
         final List<Sensor> allSensors = sensorService.findAllSensors();
         return ResponseEntity.ok(allSensors);
     }
 
+    /**
+     * GET mapping to retrieve sensor info by ID
+     */
     @GetMapping(value="/{id}")
     public ResponseEntity<Optional<Sensor>> findSensor(@PathVariable int id) {
         return ResponseEntity.ok(sensorService.findSensorById(id));
@@ -44,9 +54,7 @@ public class SensorController {
 
 
     /**
-     * Need a PUT mapping to add data to sensor
-     * uri could be /sensors/{id}/addtemp/{temp}
-     *              /sensors/{id}/addhumidity/{humidity}
+     * PUT mapping to add data to sensor
      */
 
     @PutMapping(value="/{id}/addtemp", params="temp")
@@ -56,9 +64,7 @@ public class SensorController {
     }
 
     /**
-     * Need a GET mapping to retrieve sensor data for time period
-     * uri could be /sensors/{id}/gettemp/?days={days}
-     *              /sensors/{id}/gethumidity/?days={days}
+     * GET mapping to retrieve sensor data for given time period
      */
     @GetMapping(value="/{id}/gettemp")
     public ResponseEntity<Integer> getAverageTemp(@PathVariable int id, 
