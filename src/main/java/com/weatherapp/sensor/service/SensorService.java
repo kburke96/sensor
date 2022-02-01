@@ -31,15 +31,18 @@ public class SensorService {
         Optional<Sensor> sensor = sensorRepo.findById(sensorId);
 
         List<Integer> sensorTemps = sensor.get().getTemperatures();
-        int averageTemp = 0;
+        int totalTemp = 0;
 
-        System.out.println("SensorTemps is: " + sensorTemps.toString());
+        /*
+         * Assuming the List of temps is in choronological order
+         * So start at the end of the list to get most recent temp
+         * and add required number of days to find total temp
+         * Return the average (total/days).
+         */ 
         for (int i=sensorTemps.size()-1; i>sensorTemps.size()-days-1; i--) {
-            System.out.println("Adding this to averageTemp: " + sensorTemps.get(i));
-            averageTemp+=sensorTemps.get(i);
+            totalTemp+=sensorTemps.get(i);
         }
-        System.out.println("Average temp is: " + averageTemp);
-        return averageTemp/days;
+        return totalTemp/days;
     }
 
     public Sensor addTemperatureToSensor(int sensorId, int newTemp) {
