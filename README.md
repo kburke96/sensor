@@ -8,6 +8,8 @@ Spring Boot REST API for Sensor data
 * HSQL In-memory database
 * Lombok
 
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=kburke96_sensor&metric=coverage)](https://sonarcloud.io/dashboard?id=kburke96_sensor)
+
 ## Pre-requisites
 This project has been tested using:
 * Linux Mint 20
