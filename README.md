@@ -48,6 +48,16 @@ locahost:8080/sensors/add
 
 ##### Result
 If the call is successful, the application sends back the new Sensor object that was added, in JSON format.
+```json
+{
+    "id": 3,
+    "countryName": "Ireland",
+    "cityName": "Limerick",
+    "temperatures": [
+        23,34,12,10
+    ]
+}
+```
 
 **2. Query all sensors in the database**
 ##### Example
@@ -56,6 +66,32 @@ localhost:8080/sensors/all
 ```
 ##### Result
 The application sends back a list of all sensors in the database, in JSON format.
+```json
+[
+    {
+        "id": 1,
+        "countryName": "Ireland",
+        "cityName": "Limerick",
+        "temperatures": [
+            23,
+            34,
+            12,
+            10
+        ]
+    },
+    {
+        "id": 2,
+        "countryName": "Ireland",
+        "cityName": "Galway",
+        "temperatures": [
+            2,
+            3,
+            1,
+            10
+        ]
+    }
+]
+```
 
 **3. Get average temperature for a given time range**
 
@@ -68,6 +104,9 @@ localhost:8080/sensors/1/gettemp?days=3
 ```
 ##### Result
 The application returns a ResponseEntity containing a single integer value, this is the average temperature.
+```json
+18
+```
 
 **4. Add a temperature to a sensor**
 
@@ -81,6 +120,20 @@ localhost:8080/sensors/1/addtemp?temp=14
 
 ##### Result
 The application returns the new Sensor object with the updated list of temperatures, in JSON format.
+```json
+{
+    "id": 1,
+    "countryName": "Ireland",
+    "cityName": "Limerick",
+    "temperatures": [
+        23,
+        34,
+        12,
+        10,
+        14
+    ]
+}
+```
 
 ## Known Issues and Limitations
 * **Security**: This API does not implement any of the features provided by the Spring Security project. It is always best practice to implement some form of security (basic auth, JWT, etc.) on any API.
