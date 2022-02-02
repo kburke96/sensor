@@ -14,6 +14,8 @@ This project has been tested using:
 * VS Code
 * openjdk version 11.0.9
 
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=kburke96_sensor&metric=coverage)](https://sonarcloud.io/dashboard?id=kburke96_sensor)
+
 ## Installation
 
 To run this project:
@@ -36,7 +38,7 @@ cd sensor
 
 Once the application is running, use Postman or another HTTP client to interact with it.
 
-All URLs are rooted with /sensor
+All URLs are rooted with /sensors
 
 The following methods are available to work with the API:
 
